@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Admin</title>
+  </head>
+
+  <body>
+
+    <div>
+      <nav class="navbar navbar-light navbar-fixed-top" style="border-bottom: 0px; padding:0px;">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#" style="color: white;"><strong>Home</strong></a></li>
+            <li><a href="#" style="color: white;"><strong>Teams</strong></a></li>
+            <li><a href="#" style="color: white;"><strong>Sponsors</strong></a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="_header">IPLT20</div>
+    <br><br>
+
+    <div class="container">
+      <h1 id="choice">Choose an operation to continue:</h1>
+      <br><br>
+      <div class="row">
+        <div class="col-xs-3 col-md-3"><a href="#" id="add_effect" class="btn btn-info btn-block" style="background: #0066ff"><strong>View database</strong></a></div>
+        <div class="col-xs-3 col-md-3"><a href="#" id="add_effect" class="btn btn-info btn-block" style="background: #ffcc00"><strong>View player</strong></a></div>
+        <div class="col-xs-3 col-md-3"><a href="#" id="add_effect" class="btn btn-info btn-block" style="background: #00ff00"><strong>Add player</strong></a></div>
+        <div class="col-xs-3 col-md-3"><a href="#" id="add_effect" class="btn btn-info btn-block" style="background: #ff0000"><strong>Remove player</strong></a></div>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="container">
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">See team auction amount
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JavaScript</a></li>
+            <li class="divider"></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+      </div>
+    </div>
+
+    <canvas id="lineChart"></canvas>
+
+    <div class="text-center">
+      <h1 id="logout">Are you done? Click below to logout.</h1>
+      <a href="#" class="btn btn-info btn-lg" style="background:red">
+        <span class="glyphicon glyphicon-log-out"></span> Log out
+      </a>
+    </div>
+
+
+  </body>
+</html>

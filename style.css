@@ -1,0 +1,25 @@
+._header{
+  border-top: 0px;
+  padding: 0px;
+  background-color: #000066;
+  font-family: 'Acme';
+  font-size: 750%;
+  color: white;
+  text-align: center;
+}
+
+.navbar .navbar-nav > li > a:hover,
+.navbar .navbar-nav > li > a:focus{
+    background-color: Black;
+}
+
+#add_effect{
+    color: black;
+    border-color: black;
+}
+
+#add_effect:hover{
+  -webkit-transform: scale(1.1);
+  background: #ffffff;
+  -webkit-box-shadow: 140px 0px 0 0 #ffffff inset , -140px 0px 0 0 #ffffff inset;
+}
