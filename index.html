@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="script.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <title>Admin</title>
   </head>
@@ -56,7 +57,10 @@
       </div>
     </div>
 
-    <canvas id="lineChart"></canvas>
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+
+    <canvas id="lineChart" width="70%"></canvas>
+    <canvas id="radarChart" height="70"></canvas>
 
     <div class="text-center">
       <h1 id="logout">Are you done? Click below to logout.</h1>
