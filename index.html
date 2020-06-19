@@ -4,71 +4,65 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <script src="script.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
     <title>Admin</title>
   </head>
 
   <body>
 
-    <div>
-      <nav class="navbar navbar-light navbar-fixed-top" style="border-bottom: 0px; padding:0px;">
-        <div class="container-fluid">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#" style="color: white;"><strong>Home</strong></a></li>
-            <li><a href="#" style="color: white;"><strong>Teams</strong></a></li>
-            <li><a href="#" style="color: white;"><strong>Sponsors</strong></a></li>
-          </ul>
-        </div>
-      </nav>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">Home</a>
+      <a href="#">Teams</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
     </div>
 
-    <div class="_header">IPLT20</div>
-    <br><br>
 
-    <div class="container">
-      <h1 id="choice">Choose an operation to continue:</h1>
+    <div id="main">
+      <div class="_menu">
+        <span id="menu" onclick="openNav()">&#9776; Menu</span>
+        <button type="button" id="login" class="btn btn-primary" style="background: white; color: Black"><i class="fa fa-sign-in-alt"></i> Login
+        </button>
+      </div>
+
+      <div class="_header">IPLT20</div>
       <br><br>
-      <div class="row">
-        <div class="col-xs-3 col-md-3"><a href="#" id="add_effect" class="btn btn-info btn-block" style="background: #0066ff"><strong>View database</strong></a></div>
-        <div class="col-xs-3 col-md-3"><a href="#" id="add_effect" class="btn btn-info btn-block" style="background: #ffcc00"><strong>View player</strong></a></div>
-        <div class="col-xs-3 col-md-3"><a href="#" id="add_effect" class="btn btn-info btn-block" style="background: #00ff00"><strong>Add player</strong></a></div>
-        <div class="col-xs-3 col-md-3"><a href="#" id="add_effect" class="btn btn-info btn-block" style="background: #ff0000"><strong>Remove player</strong></a></div>
+
+      <div class="container">
+        <h1 id="choice">Choose an operation to continue:</h1>
+        <br><br>
+        <div class="row">
+          <div class="col"><a href="#" id="add_effect" class="btn btn-default btn-block"><strong>View database <i class="fa fa-database"></i></strong></a></div>
+          <div class="col"><a href="#" id="add_effect" class="btn btn-default btn-block"><strong>View player <i class="fas fa-user"></i></strong></a></div>
+          <div class="col"><a href="#" id="add_effect" class="btn btn-default btn-block"><strong>Add player <i class="fas fa-user-plus"></i></strong></a></div>
+          <div class="col"><a href="#" id="add_effect" class="btn btn-default btn-block"><strong>Remove player <i class="fas fa-user-minus"></i></strong></a></div>
+        </div>
       </div>
-    </div>
-    <br><br>
+      <br><br><hr>
 
-    <div class="container">
-      <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">See team auction amount
-          <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">CSS</a></li>
-            <li><a href="#">JavaScript</a></li>
-            <li class="divider"></li>
-            <li><a href="#">About Us</a></li>
-          </ul>
+      <h3>Some graphs of team perfomance</h3>
+
+      <div id="chart_div" align="center" width="120%"></div><hr>
+      <div id="barchart_material" align="center" width="70%"></div>
+
+      <div class="logout">
+        <h1 >Are you done? Click below to logout.</h1>
+        <a href="#" id="logout" class="btn btn-info btn-lg" style="background:red">
+          Log out <i class="fa fa-sign-out-alt"></i>
+        </a>
       </div>
-    </div>
 
-    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-
-    <canvas id="lineChart" width="70%"></canvas>
-    <canvas id="radarChart" height="70"></canvas>
-
-    <div class="text-center">
-      <h1 id="logout">Are you done? Click below to logout.</h1>
-      <a href="#" class="btn btn-info btn-lg" style="background:red">
-        <span class="glyphicon glyphicon-log-out"></span> Log out
-      </a>
-    </div>
-
+    </div>>
 
   </body>
 </html>

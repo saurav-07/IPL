@@ -1,25 +1,101 @@
 ._header{
-  border-top: 0px;
   padding: 0px;
   background-color: #000066;
   font-family: 'Acme';
-  font-size: 750%;
+  font-size: 100px;
   color: white;
   text-align: center;
 }
 
-.navbar .navbar-nav > li > a:hover,
-.navbar .navbar-nav > li > a:focus{
-    background-color: Black;
-}
-
 #add_effect{
-    color: black;
-    border-color: black;
+  background-color: transparent;
+  outline:none;
+  color: black;
+  border-color: black;
 }
 
 #add_effect:hover{
   -webkit-transform: scale(1.1);
   background: #ffffff;
-  -webkit-box-shadow: 140px 0px 0 0 #ffffff inset , -140px 0px 0 0 #ffffff inset;
+  -webkit-box-shadow: 140px 0px 0 0 #0000ff inset , -140px 0px 0 0 #0000ff inset;
+}
+
+/*new*/
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #0000ff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: Black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  -webkit-transform: scale(1.1);
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#menu{
+  font-size:30px;
+  cursor:pointer;
+  color: #ffffff;
+}
+
+._menu{
+  background: #000066
+}
+
+#login{
+  margin: 6px;
+  float: right;
+}
+
+#login:hover{
+  -webkit-transform: scale(1.1);
+}
+
+#main {
+  background-color: transparent;
+  outline:none;
+  transition: margin-left .5s;
+  padding: 0px;
+}
+
+#chart_div #barchart_material{
+width:inherit;
+height:inherit;
+}
+
+.logout{
+  text-align: center;
+}
+
+#logout:hover{
+    -webkit-transform: scale(1.1);
+
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
