@@ -19,6 +19,45 @@
 
   <body>
 
+    <?php
+      $name = $team = "";
+
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = test_input($_POST["name"]);
+        $team = test_input($_POST["team"]);
+      }
+
+      function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
+
+      $servername = "localhost";
+      $username = "username";
+      $password = "password";
+      $dbname = "myDB";
+
+      // Create connection
+      $conn = mysqli_connect($servername, $username, $password, $dbname);
+      // Check connection
+      if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
+
+      // sql to delete a record
+      $sql = "DELETE FROM Players WHERE Name = '$name' AND Team = '$team'";
+
+      if (mysqli_query($conn, $sql)) {
+        echo "Record deleted successfully";
+      } else {
+        echo "Error deleting record: " . mysqli_error($conn);
+      }
+
+      mysqli_close($conn);
+    ?>
+
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="#">Home</a>
